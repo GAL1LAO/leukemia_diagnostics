@@ -6,48 +6,23 @@ Project with Helmholz and TUM as a part of the Computational Method for Single C
 The DICOM data is not stored in this repository. Download the image and
 annotation series from the original **Bone Marrow WSI – Pediatric Leukemia**
 dataset using the identifiers below, and place the series under
-`_data/bonemarrowwsi_pediatricleukemia/`.
+`_data/bonemarrowwsi_pediatricleukemia/A6BBC91AE73DD21C0533F735470A9CD0/`.
 
 | Identifier | Value |
 | --- | --- |
-| Patient ID | `002BD524C907A2A5121D3ADAED05D442` |
-| StudyInstanceUID | `1.2.826.0.1.3680043.8.498.72426040555675237648887893204163818289` |
-| WSI SeriesInstanceUID | `1.2.826.0.1.3680043.8.498.56046203939823473875129608016149951794` |
-| Annotation SeriesInstanceUID | `1.2.826.0.1.3680043.10.511.3.665340093413205649801019945659048` |
+| Patient ID | `A6BBC91AE73DD21C0533F735470A9CD0` |
+| StudyInstanceUID | `1.2.826.0.1.3680043.8.498.59505406792209197618128317514282530941` |
+| WSI SeriesInstanceUID | `1.2.826.0.1.3680043.8.498.63168619527270722340105054684865144558` |
+| Consensus annotation SeriesInstanceUID | `1.2.826.0.1.3680043.10.511.3.14336815145959892627830061814418131` |
+| Annotation session 0 SeriesInstanceUID | `1.2.826.0.1.3680043.10.511.3.79470360671595439788727812397221468` |
+| Annotation session 1 SeriesInstanceUID | `1.2.826.0.1.3680043.10.511.3.80443019300040425367918921699554272` |
+| Annotation session 3 SeriesInstanceUID | `1.2.826.0.1.3680043.10.511.3.24193110408419274872952557978659298` |
+| Annotation session 4 SeriesInstanceUID | `1.2.826.0.1.3680043.10.511.3.95468493484132104867495199664240499` |
+| Monolayer ROI SeriesInstanceUID | `1.2.826.0.1.3680043.10.511.3.86657604656478666358399584064332136` |
 
-The main image instance is named
-`01024348-5507-4e07-a80b-b7fcd1b39bd2.dcm`. The SeriesInstanceUID is the
-preferred identifier for retrieving the exact image and annotation series; the
-Patient ID alone may refer to multiple studies or slides.
-
-## Viewing whole-slide images with napari
-
-The napari viewer is an optional tool for inspecting whole-slide images (WSI). It
-is not required for linting or for installing the core project.
-
-From the repository root, install napari, the WSI reader plugin, all reader
-backends, and the OpenSlide runtime into the existing virtual environment:
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install "napari[pyqt6]>=0.10,<0.11" "napari-wsi[all]>=1.3,<2" openslide-bin
-```
-
-Launch the viewer without activating the environment:
-
-```powershell
-.\.venv\Scripts\napari.exe
-```
-
-In napari, open **Plugins > WSI Reader**, select the backend matching the image
-format, choose the slide path, and select **Load**. Use the `wsidicom` backend
-for DICOM WSI data and the `openslide` backend for formats such as `.svs`,
-`.ndpi`, and `.scn`.
-
-To confirm which napari installation is being used:
-
-```powershell
-.\.venv\Scripts\napari.exe --version
-```
+The SeriesInstanceUID values are the preferred identifiers for retrieving the
+exact image and annotation series; the Patient ID alone may refer to multiple
+studies or slides.
 
 ## Code quality
 
