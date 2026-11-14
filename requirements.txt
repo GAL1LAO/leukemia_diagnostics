@@ -1,0 +1,9 @@
+pydicom>=3.0
+highdicom>=0.25
+pandas
+matplotlib
+numpy
+pillow
+# to run the notebook
+jupyter
+ipykernel
