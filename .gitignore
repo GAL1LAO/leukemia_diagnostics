@@ -222,3 +222,5 @@ __marimo__/
 # Local DICOM data. Download separately using the identifiers in README.md.
 _data/
 *.dcm
+
+*uv.lock

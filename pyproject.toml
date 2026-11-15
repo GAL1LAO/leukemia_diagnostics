@@ -1,7 +1,39 @@
 [project]
-name = "end-to-end-ai-for-bone-marrow-smear-based-leukemia-diagnostics"
+name = "leukemia-diagnostics"
 version = "0.1.0"
 requires-python = ">=3.11"
+dependencies = [
+    "wsi2sc",
+    "wsidicom==0.34.0",
+    "torch==2.10.0",
+    "torchvision==0.25.0",
+]
+
+[project.optional-dependencies]
+viewer = [
+    "dask[array]",
+    "napari[all]",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7,<8",
+    "pre-commit==4.7.0",
+    "ruff==0.17.5",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+wsi2sc = { path = "third_party/wsi2sc", editable = true }
+torch = [{ index = "pytorch-cu128" }]
+torchvision = [{ index = "pytorch-cu128" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
 
 [tool.ruff]
 target-version = "py311"
@@ -9,6 +41,7 @@ line-length = 88
 extend-exclude = [
     "bonemarrowwsi_pediatricleukemia",
     "data",
+    "third_party",
 ]
 
 [tool.ruff.lint]

@@ -1,0 +1,4 @@
+[submodule "third_party/wsi2sc"]
+	path = third_party/wsi2sc
+	url = https://github.com/MichaelDeutges/wsi2sc.git
+	branch = main
